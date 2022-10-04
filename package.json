@@ -5,7 +5,8 @@
     "main": "src/test.js",
     "scripts": {
         "setup": "yarn",
-        "test": "./node_modules/nodemon/bin/nodemon.js --no-lazy --legacy-watch --watch ./src --watch ./example --watch ./test --inspect=9229 ./node_modules/jest/bin/jest.js --coverage --config=./jest.config.json --runInBand"
+        "debug": "./node_modules/nodemon/bin/nodemon.js --no-lazy --legacy-watch --watch ./src --watch ./example --watch ./test --inspect=9229 ./node_modules/jest/bin/jest.js --coverage --config=./jest.config.json --runInBand",
+        "test": "./node_modules/jest/bin/jest.js --coverage --config=./jest.config.json"
     },
     "files": [
         "src/test.js",

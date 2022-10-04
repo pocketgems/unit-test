@@ -1,0 +1,22 @@
+{
+  "collectCoverageFrom": [
+    "<rootDir>/example/*.js"
+  ],
+  "coverageDirectory": "/tmp/coverage",
+  "coverageReporters": ["lcov", "text", "json"],
+  "coverageThreshold": {
+  },
+  "roots": ["<rootDir>/src", "<rootDir>/test", "<rootDir>/example"],
+  "modulePathIgnorePatterns": ["node_modules"],
+  "testPathIgnorePatterns": ["node_modules"],
+  "testMatch": [
+    "<rootDir>/test/*(*/)unit-test*.js"
+  ],
+  "reporters": [
+    "<rootDir>/src/custom-reporter.js",
+    "<rootDir>/src/summary-reporter.js"
+  ],
+  "watchPathIgnorePatterns": ["node_modules"],
+  "verbose": false,
+  "noStackTrace": false
+}

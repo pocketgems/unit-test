@@ -1,0 +1,38 @@
+{
+    "name": "@pocketgems/unit-test",
+    "version": "0.0.1",
+    "description": "A thin wrapper around Jest and Supertest to provide better organization",
+    "main": "src/test.js",
+    "scripts": {
+        "setup": "yarn",
+        "test": "./node_modules/nodemon/bin/nodemon.js --no-lazy --legacy-watch --watch ./src --watch ./example --watch ./test --inspect=9229 ./node_modules/jest/bin/jest.js --coverage --config=./jest.config.json --runInBand"
+    },
+    "files": [
+        "src/test.js",
+        "src/custom-reporter.js",
+        "src/summary-reporter.js"
+    ],
+    "contributors": [
+        {
+            "name": "Yu Guan"
+        }
+    ],
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pocketgems/unit-test"
+    },
+    "dependencies": {
+        "chalk": "^4.0.0",
+        "chalk-table": "^1.0.2",
+        "strip-ansi": "^6.0.0",
+        "word-wrap": "^1.2.3"
+    },
+    "peerDependencies": {
+        "jest": "^26.4.2"
+    },
+    "devDependencies": {
+        "jest": "^26.4.2",
+        "nodemon": "^2.0.20"
+    }
+}

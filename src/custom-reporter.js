@@ -16,9 +16,9 @@ class CustomReporter extends DefaultReporter {
         entry.origin = ''
       })
       const lines = getConsoleOutput(
-        config.cwd,
-        !!this._globalConfig.verbose,
-        consoleBuffer
+        consoleBuffer,
+        config,
+        this._globalConfig
       ).split('\n')
       // don't print the location of console.log statements (it might be better
       // to accomplish this with a custom console) because we have our own

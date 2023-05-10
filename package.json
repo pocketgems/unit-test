@@ -1,6 +1,6 @@
 {
     "name": "@pocketgems/unit-test",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A thin wrapper around Jest and Supertest to provide better organization",
     "main": "src/test.js",
     "scripts": {
@@ -16,6 +16,10 @@
     "contributors": [
         {
             "name": "Yu Guan"
+        },
+        {
+            "name": "Solaman Huq",
+            "email": "solaman@pocketgems.com"
         }
     ],
     "license": "Apache-2.0",

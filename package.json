@@ -1,6 +1,6 @@
 {
     "name": "@pocketgems/unit-test",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "A thin wrapper around Jest and Supertest to provide better organization",
     "main": "src/test.js",
     "scripts": {
@@ -30,10 +30,10 @@
         "word-wrap": "^1.2.3"
     },
     "peerDependencies": {
-        "jest": "^26.4.2"
+        "jest": "^29"
     },
     "devDependencies": {
-        "jest": "^26.4.2",
+        "jest": "^29",
         "nodemon": "^2.0.20"
     }
 }

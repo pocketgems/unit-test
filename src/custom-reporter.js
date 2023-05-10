@@ -1,6 +1,6 @@
 // adapted from https://github.com/facebook/jest/issues/4156#issuecomment-490764080
 const { getConsoleOutput } = require('@jest/console')
-const { DefaultReporter } = require('@jest/reporters/build')
+const { DefaultReporter } = require('@jest/reporters')
 
 class CustomReporter extends DefaultReporter {
   printTestFileHeader (testPath, config, result) {

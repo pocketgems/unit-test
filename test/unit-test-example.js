@@ -9,6 +9,17 @@ class ExampleTest extends BaseTest {
   testInvalidCall () {
     expect(() => Example.broken()).toThrow()
   }
+
+  async testCatchError () {
+    const shouldThrow = () => {
+      throw new Error('hello!')
+    }
+    const error = await this.catchError(shouldThrow)
+    expect(error.message).toEqual('hello!')
+    const doesNotThrow = () => 2
+    await expect(this.catchError(doesNotThrow))
+      .rejects.toThrow()
+  }
 }
 
 runTests(ExampleTest)

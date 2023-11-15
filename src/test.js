@@ -2,6 +2,12 @@ if (Number(process.env.INDEBUGGER)) {
   jest.setTimeout(30 * 60 * 1000)
 }
 
+/**
+ * Helper error when attempting to examine contents of a given error.
+ * Should be used in conjunction with BaseServiceTest.prototype.getError
+ */
+class NoErrorThrownError extends Error {}
+
 class BaseTest {
   _listTestsOn (obj) {
     return Object.getOwnPropertyNames(obj).filter(name => {
@@ -40,6 +46,25 @@ class BaseTest {
   async afterAll () {}
   async beforeEach () {}
   async afterEach () {}
+
+   /**
+   * Catches error from specified call. Error may be examined by calling
+   * tests.
+   * This approach is recommended for in-depth assertions on errors:
+   * https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/no-conditional-expect.md#how-to-catch-a-thrown-error-for-testing-without-violating-this-rule
+   * @param {Promise} call - function expected to throw
+   * @throws {NoErrorThrownError} - exception if 'call' method
+   * does not throw.
+   * @returns {Error} error thrown be inner call method.
+   */
+   async catchError (call) {
+    try {
+      await call()
+    } catch (error) {
+      return error
+    }
+    throw new NoErrorThrownError()
+  }
 
   runTests () {
     describe(this.constructor.name, () => {
